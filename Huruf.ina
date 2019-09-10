@@ -14,8 +14,8 @@ tulis(x);
 fungsi Teks_lawanArah(str){
 jika(tipe str==="huruf"){
 isi vstr="";
-untuk(isi ix=str.panjang;ix>0;ix--){
-vstr+=str[ix-1];
+untuk(isi lwnarh=str.panjang;lwnarh>0;lwnarh--){
+vstr+=str[lwnarh-1];
 }
 balik vstr;
 }lainnya{
@@ -34,19 +34,18 @@ fungsi Teks_ambil(str,numX,numY){
 isi vstr="";
 jika(tipe str==="huruf"&&tipe numX==="angka"&&tipe numY==="angka"){
 jika(numX<numY){
-untuk(isi ix=numX;ix<numY;ix++){
-vstr+=str[ix];
+untuk(isi tambl=numX;tambl<numY;tambl++){
+vstr+=str[tambl];
 }
 }
 balik vstr;
 }
 jika(tipe str==="huruf"&&tipe numX==="angka"&&tipe numY==="takterdefinisi"){
-untuk(isi ix=numX;ix<str.panjang;ix++){
-vstr+=str[ix];
+untuk(isi tambl=numX;tambl<str.panjang;tambl++){
+vstr+=str[tambl];
 }
 balik vstr;
 }
-
 }
 isi nama="Wawan";
 isi x=Teks_ambil(nama,0,3);
@@ -62,13 +61,13 @@ fungsi Teks_hurufBesar(hrf){
 isi abjadB="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 isi abjadK="abcdefghijklmnopqrstuvwxyz";
 isi temp="";
-untuk(isi ix=0;ix<hrf.panjang;ix++){
-untuk(isi iy=0;iy<abjadK.panjang;iy++){
-jika(hrf[ix]===abjadK[iy]){
-temp+=abjadB[iy];
+untuk(isi hrfBsr=0;hrfBsr<hrf.panjang;hrfBsr++){
+untuk(isi bsrHrf=0;bsrHrf<abjadK.panjang;bsrHrf++){
+jika(hrf[hrfBsr]===abjadK[bsrHrf]){
+temp+=abjadB[bsrHrf];
 }lainnya{
-jika(hrf[ix]===abjadB[iy]){
-temp+=abjadB[iy];
+jika(hrf[hrfBsr]===abjadB[bsrHrf]){
+temp+=abjadB[bsrHrf];
 }
 }
 }
@@ -84,13 +83,13 @@ fungsi Teks_hurufKecil(hrf){
 isi abjadB="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 isi abjadK="abcdefghijklmnopqrstuvwxyz";
 isi temp="";
-untuk(isi ix=0;ix<hrf.panjang;ix++){
-untuk(isi iy=0;iy<abjadK.panjang;iy++){
-jika(hrf[ix]===abjadK[iy]){
-temp+=abjadK[iy];
+untuk(isi hrfKcl=0;hrfKcl<hrf.panjang;hrfKcl++){
+untuk(isi kclHrf=0;kclHrf<abjadK.panjang;kclHrf++){
+jika(hrf[hrfKcl]===abjadK[kclHrf]){
+temp+=abjadK[kclHrf];
 }lainnya{
-jika(hrf[ix]===abjadB[iy]){
-temp+=abjadK[iy];
+jika(hrf[hrfKcl]===abjadB[kclHrf]){
+temp+=abjadK[kclHrf];
 }
 }
 }
@@ -106,13 +105,13 @@ fungsi Teks_putus(hrf,nmrX,nmrY){
 isi mem="";
 jika(tipe hrf==="huruf"&&tipe nmrX==="angka"&&tipe nmrY==="angka"){
 jika(nmrX<nmrY){
-untuk(isi ix=nmrX;ix<nmrY;ix++){
-mem+=hrf[ix];
+untuk(isi tPts=nmrX;tPts<nmrY;tPts++){
+mem+=hrf[tPts];
 }
 }
 jika(nmrX>nmrY){
-untuk(isi ix=nmrX;ix>nmrY;ix--){
-mem+=hrf[ix];
+untuk(isi tPts=nmrX;tPts>nmrY;tPts--){
+mem+=hrf[tPts];
 }
 }
 }lainnya{
@@ -123,4 +122,40 @@ balik mem;
 
 tulis(Teks_putus("Handrawan",0,3));
 tulis(Teks_putus("Handrawan",3,0));
+
+
+fungsi Teks_cari(str,kata){
+isi posisi;
+fungsi ambil(str,nomX,nomY){
+isi hasil="";
+untuk(isi tCrxAmbl=nomX;tCrxAmbl<nomY;tCrxAmbl++){
+hasil+=str[tCrxAmbl];
+}
+balik hasil;
+}
+untuk(isi tCrxhand=0;tCrxhand<str.panjang;tCrxhand++){
+isi cstr=tCrxhand;
+isi dstr=cstr+kata.panjang;
+jika(cstr<dstr){
+jika(kata===ambil(str,cstr,dstr)){
+posisi=cstr;
+berhenti;
+}
+}
+jika(dstr===str.panjang){
+posisi=-1;
+berhenti;
+}
+}
+balik posisi;
+}
+isi y="Wawan";
+tulis(Teks_cari(y,"h"));/*
+hasilnya -1
+-1= definisi Tidak ada
+*/
+tulis(Teks_cari(y,"an"));
+/* hasilnya di posisi 2
+
+*/
 
