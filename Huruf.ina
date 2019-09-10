@@ -1,0 +1,83 @@
+fungsi Teks_nomor(str,num){
+jika(tipe str==="huruf"&&tipe num==="angka"){
+balik str[num];
+}lainnya{
+balik "Tipe masukan salah  : \nparameter 1 & 2 harus bertipe teks dan nomor ";
+}
+}
+/* Contoh 1 */
+isi nama="Wawan";
+isi x=Teks_nomor(nama,0);
+tulis(x);
+/* Hasil :  W */
+
+fungsi Teks_lawanArah(str){
+jika(tipe str==="huruf"){
+isi vstr="";
+untuk(isi ix=str.panjang;ix>0;ix--){
+vstr+=str[ix-1];
+}
+balik vstr;
+}lainnya{
+balik "Tipe masukan salah : parameter harus bertipe teks ";
+}
+}
+isi nama="Wawan";
+
+/*Contoh 2 */
+isi x=Teks_lawanArah(nama);
+tulis(x);/*
+hasil : nawaW */
+
+
+fungsi Teks_ambil(str,numX,numY){
+isi vstr="";
+jika(tipe str==="huruf"&&tipe numX==="angka"&&tipe numY==="angka"){
+jika(numX<numY){
+untuk(isi ix=numX;ix<numY;ix++){
+vstr+=str[ix];
+}
+}
+balik vstr;
+}
+jika(tipe str==="huruf"&&tipe numX==="angka"&&tipe numY==="takterdefinisi"){
+untuk(isi ix=numX;ix<str.panjang;ix++){
+vstr+=str[ix];
+}
+balik vstr;
+}
+
+}
+isi nama="Wawan";
+isi x=Teks_ambil(nama,0,3);
+isi y=Teks_ambil(nama,0);
+tulis(x);
+tulis(y);
+/* hasil :
+Waw
+Wawan
+*/
+
+fungsi Teks_hurufBesar(hrf){
+isi abjadB="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+isi abjadK="abcdefghijklmnopqrstuvwxyz";
+isi temp="";
+untuk(isi ix=0;ix<hrf.panjang;ix++){
+untuk(isi iy=0;iy<abjadK.panjang;iy++){
+jika(hrf[ix]===abjadK[iy]){
+temp+=abjadB[iy];
+}lainnya{
+jika(hrf[ix]===abjadB[iy]){
+temp+=abjadB[iy];
+}
+}
+}
+}
+balik temp;
+}
+
+isi a="Wawan";
+tulis(Teks_hurufBesar(a));
+
+
+

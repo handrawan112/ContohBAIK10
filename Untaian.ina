@@ -1,0 +1,43 @@
+fungsi lihat(unt){
+untuk(isi i=0;i<unt.panjang;i++){
+tulis(unt[i]);
+}
+}
+
+
+fungsi ini_untaian(visi){
+isi logika=salah;
+if(tipe visi==="untaian"){
+logika=benar;
+}else{
+logika=salah;
+}
+balik logika;
+}
+
+
+fungsi unt_tambahDepan(unt,nil){
+isi vunt=[],xint=0;
+vunt[0]=nil;
+untuk(isi ix=1;ix<unt.panjang+1;ix++){
+vunt[ix]=unt[xint];
+xint++;
+}
+balik vunt;
+}
+isi nama=[1,2];
+lihat(nama);
+isi n=tam(nama,10);
+isi x=tam(n,20);
+lihat(x);
+
+
+fungsi sisipAkhir(unt,nil){
+balik unt[unt.panjang]=nil;
+}
+isi nama=[1,2];
+lihat(nama);
+sisipAkhir(nama,20);
+lihat(nama);
+
+

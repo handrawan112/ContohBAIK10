@@ -1,0 +1,37 @@
+fungsi obj_tambahDaya(obj,nama,data){
+jika(tipe obj==="objek"&&tipe nama==="huruf"){
+balik obj[nama]=data;
+}lainnya{
+balik "Tipe data salah  : argumen1 = objek, argumen2 = huruf ";
+}
+}
+isi nama={
+a:20
+};
+tulis(nama["a"]);
+obj_tambahDaya(nama,"wan",30);
+obj_tambahDaya(nama,"hai",fungsi(){
+tulis("hallo");
+});
+tulis(nama.wan);
+nama.hai();
+
+fungsi obj_cekData(obj,nama){
+jika(tipe obj[nama]==="takterdefinisi"){
+balik salah;
+}lainnya{
+jika(tipe obj[nama]!=="takterdefinisi"){
+balik benar;
+}
+}
+}
+
+isi h={
+nama:"Wawan"
+};
+tulis(obj_cekData(h,"nama"));
+/*benar*/
+tulis(obj_cekData(h,"com"));
+/*Salah*/
+
+
