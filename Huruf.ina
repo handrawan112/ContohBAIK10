@@ -80,4 +80,47 @@ isi a="Wawan";
 tulis(Teks_hurufBesar(a));
 
 
+fungsi Teks_hurufKecil(hrf){
+isi abjadB="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+isi abjadK="abcdefghijklmnopqrstuvwxyz";
+isi temp="";
+untuk(isi ix=0;ix<hrf.panjang;ix++){
+untuk(isi iy=0;iy<abjadK.panjang;iy++){
+jika(hrf[ix]===abjadK[iy]){
+temp+=abjadK[iy];
+}lainnya{
+jika(hrf[ix]===abjadB[iy]){
+temp+=abjadK[iy];
+}
+}
+}
+}
+balik temp;
+}
+
+isi a="Wawan";
+tulis(Teks_hurufKecil(a));
+
+
+fungsi Teks_putus(hrf,nmrX,nmrY){
+isi mem="";
+jika(tipe hrf==="huruf"&&tipe nmrX==="angka"&&tipe nmrY==="angka"){
+jika(nmrX<nmrY){
+untuk(isi ix=nmrX;ix<nmrY;ix++){
+mem+=hrf[ix];
+}
+}
+jika(nmrX>nmrY){
+untuk(isi ix=nmrX;ix>nmrY;ix--){
+mem+=hrf[ix];
+}
+}
+}lainnya{
+mem="Tipe data salah : Arg1 harus teks, arg2 harus nomor, arg3 harus nomor\n";
+}
+balik mem;
+}
+
+tulis(Teks_putus("Handrawan",0,3));
+tulis(Teks_putus("Handrawan",3,0));
 
