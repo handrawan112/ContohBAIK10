@@ -159,3 +159,21 @@ tulis(Teks_cari(y,"an"));
 
 */
 
+
+fungsi keUntaian(str,pola){
+isi hndrwn=[],pltrs="",intx=0;
+untuk(isi strpola=0;strpola<str.panjang;strpola++){
+jika(str[strpola]===pola){
+hndrwn[intx]=pltrs;
+pltrs="";
+intx++;
+}lainnya{
+pltrs+=str[strpola];
+}
+}
+balik hndrwn;
+}
+isi wan="Ha,n,dr,a,wa,n";
+tulis(keUntaian(wan,",")[0]);
+/*Hasilnya : Ha */
+
