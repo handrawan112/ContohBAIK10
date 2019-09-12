@@ -27,8 +27,8 @@ balik vunt;
 }
 isi nama=[1,2];
 lihat(nama);
-isi n=tam(nama,10);
-isi x=tam(n,20);
+isi n=tambahDepan(nama,10);
+isi x=tambahDepan(n,20);
 lihat(x);
 
 
@@ -62,6 +62,10 @@ isi hasil;
 untuk(isi untcr=0;untcr<vunt.panjang;untcr++){
 jika(vunt[untcr]===tipeData){
 hasil=untcr;
+berhenti;
+}
+jika(untcr===vunt.panjang){
+hasil=-1;
 berhenti;
 }
 }
