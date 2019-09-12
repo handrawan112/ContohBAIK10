@@ -19,8 +19,8 @@ balik logika;
 fungsi unt_tambahDepan(unt,nil){
 isi vunt=[],xint=0;
 vunt[0]=nil;
-untuk(isi ix=1;ix<unt.panjang+1;ix++){
-vunt[ix]=unt[xint];
+untuk(isi utmbhDpn=1;utmbhDpn<unt.panjang+1;utmbhDpn++){
+vunt[utmbhDpn]=unt[xint];
 xint++;
 }
 balik vunt;
@@ -32,12 +32,44 @@ isi x=tam(n,20);
 lihat(x);
 
 
-fungsi sisipAkhir(unt,nil){
+fungsi unt_selipkanAkhir(unt,nil){
 balik unt[unt.panjang]=nil;
 }
 isi nama=[1,2];
 lihat(nama);
-sisipAkhir(nama,20);
+unt_selipkanAkhir(nama,20);
 lihat(nama);
 
+
+fungsi unt_cabutPosisi(vunt,idx){
+isi vuntcbtps=[],indx=0;
+untuk(isi ivuntcbtps=0;ivuntcbtps<vunt.panjang;ivuntcbtps++){
+jika(ivuntcbtps!==idx){
+vuntcbtps[indx]=vunt[ivuntcbtps];
+indx++;
+}
+}
+balik vuntcbtps;
+}
+
+
+isi num=[1,2,3,4,5];
+lihat(unt_cabutPosisi(num,2));
+/*hasil : 1245 */
+
+fungsi unt_cari(vunt,tipeData){
+isi hasil;
+untuk(isi untcr=0;untcr<vunt.panjang;untcr++){
+jika(vunt[untcr]===tipeData){
+hasil=untcr;
+berhenti;
+}
+}
+balik hasil;
+}
+isi nama=[1,2,3];
+tulis(unt_cari(nama,3));
+/*hasil variabel 3 ada diposisi 2
+terhitung dari indek 0
+*/
 
